@@ -1,0 +1,166 @@
+body{
+    background-color: black;
+}
+
+.gallery-container{
+display: flex;
+flex-wrap: wrap;
+width: 94%;
+padding: 10px;
+box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+margin: 90px auto;
+
+}
+
+.gallery-item{
+    flex-basis: 32.7%;
+    margin-bottom: 6px;
+    opacity: 0.86;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+.gallery-item:hover{
+    opacity: 1;
+}
+
+.gallery-item img{
+    width: 25em;
+    margin: 1em;
+    border-radius: 0.2em;
+    transition: 0.6s;
+
+}
+
+/*  lightbox */
+
+.lightbox{
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    left: 0;
+}
+
+.lightbox-content{
+    position: relative;
+    width: 65%;
+    height: 58%;
+    margin: 5% auto;
+}
+
+.lightbox-content img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.lightbox-prev, .lightbox-next{
+position: absolute;
+background-color: rgba(0, 0, 0, 0.8);
+color: #fff;
+padding: 9px;
+top: 45%;
+cursor: pointer;
+}
+.lightbox-prev{
+    left: 0;
+}
+.lightbox-next{
+    right: 0;
+}
+
+/* responsive  */
+@media(max-width: 767px){
+    .gallery-container{
+        width: 100%;
+    }
+    .gallery-item{
+        flex-basis: 49.80%;
+        margin-bottom: 4px; 
+    }
+    .lightbox-content{
+        width: 80%;
+        height: 60%;
+        margin: 15% auto;
+    
+    }
+}
+
+@media (max-width: 480px){
+    .gallery-item{
+        flex-basis: 100%;
+        margin-bottom: 4px;
+    }
+    .lightbox-content{
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+
+h2{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 30pt;
+    font-weight:200;
+    margin-top: 100px;
+}
+
+hr{
+    color: #fff;
+}
+
+.buttons {
+padding: 2em 0 6em 0;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.buttons button {
+margin: 1em;
+padding: 0.7em 1.5em;
+font-size: 1.1em;
+border: none;
+background: #111;
+color: #fff;
+border: 2px solid #111;
+border-radius: 0.2em;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.buttons button:hover,
+.buttons .btn-clicked {
+   background: #fff;
+   color: #111; 
+}
+
+.gallery-item .img-expand {
+    width: 25em;
+    margin: 1em;
+  }
+  
+  .gallery-item .img-shrink{
+      width: 0em;
+      margin: -1em;
+  }
+
+@media screen and (max-width: 600px){
+    .buttons button {
+        width: 100%;
+        display: block;
+    }
+    .gallery-item .img-expand,
+    .gallery-item img{
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="dark.css" />
+    
+    <link rel="stylesheet" href="gallery.css" />
+    <title>Taruz | Photography Editing Design  </title>
+
+    <link rel="shortcut icon" href="assets/logo-white.svg" type="x-icon">
+
+  </head>
+  <body>
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="home.html">
+              <img src="assets/logo-white.svg" alt="logo" />
+            </a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="#about">ABOUT US</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li class="nav__logo">
+            <a href="#">
+              <img src="assets/logo-white.svg" alt="logo" />
+            </a>
+          </li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="#blog">PRICES</a></li>
+          <li><a href="contact.html">CONTACT US</a></li>
+        </ul>
+      </nav>
+    <section>
+        <h2><u>G A L L E R Y</u></h2>
+    </section>
+    <div class="buttons">
+      <button type="button"> ALL </button>
+      <button type="button" data-btn="1"> PORTRAITS </button>
+      <button type="button" data-btn="2"> WEDDINGS </button>
+      <button type="button" data-btn="3"> EVENTS </button>
+       </div>
+    <div class="gallery-container">
+      
+        <div class="gallery-item" data-index="1"><img src="assets/image-1.svg" alt="" data-img="1"></div>
+        <div class="gallery-item" data-index="2"><img src="assets/image-2.svg" alt="" data-img="1"></div>
+        <div class="gallery-item" data-index="3"><img src="assets/image-3.svg" alt="" data-img="1"></div>
+        <div class="gallery-item" data-index="4"><img src="assets/image-4.svg" alt="" data-img="3"></div>
+        <div class="gallery-item" data-index="5"><img src="assets/image-5.svg" alt="" data-img="3"></div>
+        <div class="gallery-item" data-index="6"><img src="assets/image-6.svg" alt="" data-img="3"></div>
+        <div class="gallery-item" data-index="7"><img src="assets/image-7.svg" alt="" data-img="1"></div>
+        <div class="gallery-item" data-index="8"><img src="assets/image-8.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="9"><img src="assets/image-9.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="10"><img src="assets/image-10.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="11"><img src="assets/image-11.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="12"><img src="assets/image-12.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="13"><img src="assets/image-13.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="14"><img src="assets/image-14.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="15"><img src="assets/image-15.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="16"><img src="assets/image-16.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="17"><img src="assets/image-17.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="18"><img src="assets/image-18.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="19"><img src="assets/image-19.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="20"><img src="assets/image-20.svg" alt="" data-img="2"></div>
+        <div class="gallery-item" data-index="21"><img src="assets/image-21.svg" alt="" data-img="2"></div>
+    </div>
+
+
+    <script>
+
+const btns = document.querySelectorAll('.buttons button');
+const imgs = document.querySelectorAll('.gallery-item img');
+
+for (let i = 1; i < btns.length; i++){
+  btns[i].addEventListener('click', filterImg);
+}
+
+function setActiveBtn(e) {
+  btns.forEach(btn => {
+    btn.classList.remove('btn-clicked');
+  });
+
+  e.target.classList.add('btn-clicked');
+}
+
+function filterImg(e) {
+  setActiveBtn(e);
+
+  imgs.forEach(img => {
+    img.classList.remove('img-shrink');
+    img.classList.add('img-expand');
+
+    const imgType = parseInt(img.dataset.img);
+    const btnType = parseInt(e.target.dataset.btn);
+
+    if (imgType !== btnType) {
+      img.classList.remove('img-expand');
+      img.classList.add('img-shrink');
+    }
+  });
+}
+
+btns[0].addEventListener('click', (e) => {
+  setActiveBtn(e);
+  imgs.forEach(img => {
+    img.classList.remove('img-shrink');
+    img.classList.add('img-expanded');
+  });
+});
+    </script>  
+
+    <!--JavaScript-->
+    <script>
+        const galleryItem = document.getElementsByClassName("gallery-item");
+        //create element container 
+        const lightBoxContainer = document.createElement("div");
+        //create content
+        const lightBoxContent = document.createElement("div");
+        //create image box
+        const lightBoxImg = document.createElement("img");
+        //create prev 
+        const lightBoxPrev = document.createElement("div");
+
+        const lightBoxNext = document.createElement("div");
+
+
+        lightBoxContainer.classList.add('lightbox');
+        lightBoxContent.classList.add('lightbox-content');
+        lightBoxPrev.classList.add("fa", "fa-angle-left", "lightbox-prev");
+        lightBoxNext.classList.add("fa", "fa-angle-right", "lightbox-next");
+
+        lightBoxContainer.appendChild(lightBoxContent);
+        lightBoxContent.appendChild(lightBoxImg);
+        lightBoxContent.appendChild(lightBoxPrev);
+        lightBoxContent.appendChild(lightBoxNext);
+        document.body.appendChild(lightBoxContainer);
+
+        let index = 1;
+
+        function showLightBox(n) {
+            if (n > galleryItem.length) {
+                index = 1; 
+            } else if (n < 1){
+                index = galleryItem.length;
+            }
+            let imageLocation = galleryItem[index-1].children[0].getAttribute("src");
+            lightBoxImg.setAttribute("src", imageLocation);
+
+        }
+
+        function currentImage(){
+            lightBoxContainer.style.display="block";
+
+            let imageIndex = parseInt(this.getAttribute("data-index"));
+            showLightBox(index = imageIndex);
+        }
+
+        for (let i = 0; i<galleryItem.length; i++){
+            galleryItem[i].addEventListener("click", currentImage);   
+        }
+
+        function sliderImage(n){
+         showLightBox(index += n);
+        }
+
+        function prevImage(){
+            sliderImage(-1);
+        }
+
+        function nextImage(){
+            sliderImage(1);
+        }
+
+        lightBoxPrev.addEventListener("click", prevImage);
+        lightBoxNext.addEventListener("click", nextImage);
+
+        //close lightbox
+
+        function closeLightBox(){
+            if(this === event.target){
+                lightBoxContainer.style.display = "none";
+            }
+        }
+
+        lightBoxContainer.addEventListener("click", closeLightBox);
+
+    </script>
+    <hr>
+    <footer id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <img src="assets/logo-white.svg" alt="logo" />
+          <div class="footer__socials">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-youtube-fill"></i></a>
+            <a href="#"><i class="ri-pinterest-line"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <ul class="footer__links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="#blog">PRICES</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+            <ul class="footer__links">
+              <p><b><u>DO NOT HESITATE TO REACH OUT</u></b></p>
+              <p>Call: +44 7512 501931</p> 
+              <p>Email at: <a href="andrewtaruz50@gmail.com"><u>Andrew's Email</u></a></p>
+            </ul>
+          </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 Taruz . All rights reserved.
+      </div>
+    </footer>
+  
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="main.js"></script>
+  </body>
+  </html>

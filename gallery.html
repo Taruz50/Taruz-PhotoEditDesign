@@ -19,42 +19,27 @@
   <link rel="stylesheet" href="dark.css" />
     
     <link rel="stylesheet" href="gallery.css" />
+    <link rel="stylesheet" href="creative-category.css" />
     <title>Taruz | Photography Editing Design  </title>
 
     <link rel="shortcut icon" href="assets/logo-white.svg" type="x-icon">
 
   </head>
-  <body>
-      <nav>
-        <div class="nav__header">
-          <div class="nav__logo">
-            <a href="home.html">
-              <img src="assets/logo-white.svg" alt="logo" />
-            </a>
-          </div>
-          <div class="nav__menu__btn" id="menu-btn">
-            <i class="ri-menu-line"></i>
-          </div>
-        </div>
-        <ul class="nav__links" id="nav-links">
-          <li><a href="home.html">HOME</a></li>
-          <li><a href="#about">ABOUT US</a></li>
-          <li><a href="services.html">SERVICES</a></li>
-          <li class="nav__logo">
-            <a href="#">
-              <img src="assets/logo-white.svg" alt="logo" />
-            </a>
-          </li>
-          <li><a href="gallery.html">GALLERY</a></li>
-          <li><a href="#blog">PRICES</a></li>
-          <li><a href="contact.html">CONTACT US</a></li>
-        </ul>
-      </nav>
-    <section>
-        <h2><u>G A L L E R Y</u></h2>
+  <body class="creative-page creative-gallery">
+      <header class="creative-page-header"><nav class="creative-page-nav" aria-label="Creative navigation"><div class="creative-page-bar"><a class="creative-page-brand" href="home.html" aria-label="Taruz creative home"><img src="assets/Taruz.png" alt="Taruz" /></a><button class="creative-page-menu" type="button" data-creative-menu aria-controls="creative-page-links" aria-label="Open navigation" aria-expanded="false"><i class="ri-menu-line" aria-hidden="true"></i></button></div><ul class="creative-page-links" id="creative-page-links"><li><a href="home.html">Creative Home</a></li><li><a href="gallery.html">Photography</a></li><li><a href="design.html">Graphic Design</a></li><li><a href="video.html">Moving Image</a></li><li><a href="index.html">Professional Portfolio ↗</a></li></ul></nav></header>
+    <section class="photo-intro">
+      <p>PHOTOGRAPHY / SELECTED WORK</p>
+      <h1>Light leaves<br /><em>a trace.</em></h1>
+      <div class="photo-intro-copy"><p>Photographs made through attention to place, gesture and the moment before it disappears.</p></div>
+      <div class="photo-features" data-reveal>
+        <img src="assets/header.jpg" alt="Selected black-and-white photography by Taruz" />
+        <img src="assets/header-2.jpg" alt="Selected black-and-white photography by Taruz" />
+        <img src="assets/PM-compose.jpeg" alt="Home / Cardiff photograph by Taruz" />
+      </div>
     </section>
-    <div class="buttons">
-      <button type="button"> ALL </button>
+    <section class="photo-archive-heading"><p>PHOTOGRAPHY / ARCHIVE</p><h2>Every frame.</h2></section>
+    <div class="buttons" data-gallery-controls>
+      <button type="button" data-btn="all"> ALL </button>
       <button type="button" data-btn="1"> PORTRAITS </button>
       <button type="button" data-btn="2"> WEDDINGS </button>
       <button type="button" data-btn="3"> EVENTS </button>
@@ -83,50 +68,8 @@
         <div class="gallery-item" data-index="20"><img src="assets/image-20.svg" alt="" data-img="2"></div>
         <div class="gallery-item" data-index="21"><img src="assets/image-21.svg" alt="" data-img="2"></div>
     </div>
+    <div class="gallery-more-wrap"><button class="gallery-more" type="button" data-gallery-more>View more photographs <span aria-hidden="true">↓</span></button></div>
 
-
-    <script>
-
-const btns = document.querySelectorAll('.buttons button');
-const imgs = document.querySelectorAll('.gallery-item img');
-
-for (let i = 1; i < btns.length; i++){
-  btns[i].addEventListener('click', filterImg);
-}
-
-function setActiveBtn(e) {
-  btns.forEach(btn => {
-    btn.classList.remove('btn-clicked');
-  });
-
-  e.target.classList.add('btn-clicked');
-}
-
-function filterImg(e) {
-  setActiveBtn(e);
-
-  imgs.forEach(img => {
-    img.classList.remove('img-shrink');
-    img.classList.add('img-expand');
-
-    const imgType = parseInt(img.dataset.img);
-    const btnType = parseInt(e.target.dataset.btn);
-
-    if (imgType !== btnType) {
-      img.classList.remove('img-expand');
-      img.classList.add('img-shrink');
-    }
-  });
-}
-
-btns[0].addEventListener('click', (e) => {
-  setActiveBtn(e);
-  imgs.forEach(img => {
-    img.classList.remove('img-shrink');
-    img.classList.add('img-expanded');
-  });
-});
-    </script>  
 
     <!--JavaScript-->
     <script>
@@ -204,44 +147,14 @@ btns[0].addEventListener('click', (e) => {
         lightBoxContainer.addEventListener("click", closeLightBox);
 
     </script>
-    <hr>
-    <footer id="contact">
-      <div class="section__container footer__container">
-        <div class="footer__col">
-          <img src="assets/logo-white.svg" alt="logo" />
-          <div class="footer__socials">
-            <a href="#"><i class="ri-facebook-fill"></i></a>
-            <a href="#"><i class="ri-instagram-line"></i></a>
-            <a href="#"><i class="ri-twitter-fill"></i></a>
-            <a href="#"><i class="ri-youtube-fill"></i></a>
-            <a href="#"><i class="ri-pinterest-line"></i></a>
-          </div>
-        </div>
-        <div class="footer__col">
-          <ul class="footer__links">
-            <li><a href="home.html">HOME</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="services.html">SERVICES</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="#blog">PRICES</a></li>
-            <li><a href="contact.html">CONTACT US</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-            <ul class="footer__links">
-              <p><b><u>DO NOT HESITATE TO REACH OUT</u></b></p>
-              <p>Call: +44 7512 501931</p> 
-              <p>Email at: <a href="andrewtaruz50@gmail.com"><u>Andrew's Email</u></a></p>
-            </ul>
-          </div>
-      </div>
-      <div class="footer__bar">
-        Copyright © 2024 Taruz . All rights reserved.
-      </div>
+    <footer class="creative-gallery-footer">
+      <a href="home.html">← CREATIVE HOME</a>
+      <a href="index.html">PROFESSIONAL PORTFOLIO ↗</a>
+      <p>© 2026 TARUZ</p>
     </footer>
   
       <script src="https://unpkg.com/scrollreveal"></script>
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-      <script src="main.js"></script>
+      <script src="creative-category.js"></script>
   </body>
   </html>

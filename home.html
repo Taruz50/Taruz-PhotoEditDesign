@@ -3,251 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Taruz | Photography Editing Design  </title>
-
-    <link rel="shortcut icon" href="assets/logo-white.svg" type="x-icon">
-
+    <meta name="description" content="Photography, moving image and graphic design by Taruz." />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="creative-home.css" />
+    <link rel="shortcut icon" href="assets/logo-white.svg" type="image/svg+xml" />
+    <title>Taruz — Creative Work</title>
   </head>
-  <body>
-
-    <header class="header-2" id="home">
-      <nav>
+  <body id="top">
+    <div class="script-hook" data-preaload aria-hidden="true"></div>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main navigation">
         <div class="nav__header">
-          <div class="nav__logo">
-            <a href="home.html">
-              <img src="assets/logo-white.svg" alt="logo" />
-            </a>
-          </div>
-          <div class="nav__menu__btn" id="menu-btn">
-            <i class="ri-menu-line"></i>
-          </div>
+          <a class="brand" href="home.html" aria-label="Taruz creative home"><img class="creative-logo" src="assets/Taruz.png" alt="Taruz" /></a>
+          <button class="nav__menu__btn" id="menu-btn" type="button" aria-label="Open navigation"><i class="ri-menu-line" aria-hidden="true"></i></button>
         </div>
         <ul class="nav__links" id="nav-links">
-          <li><a href="home.html">HOME</a></li>
-          <li><a href="#about">ABOUT US</a></li>
-          <li><a href="services.html">SERVICES</a></li>
-          <li class="nav__logo">
-            <a href="#">
-              <img src="assets/logo-white.svg" alt="logo" />
-            </a>
-          </li>
-          <li><a href="gallery.html">GALLERY</a></li>
-          <li><a href="#blog">PRICES</a></li>
-          <li><a href="contact.html">CONTACT US</a></li>
+          <li><a href="gallery.html">Photography</a></li>
+          <li><a href="design.html">Graphic Design</a></li>
+          <li><a href="video.html">Moving Image</a></li>
+          <li><a href="#practice">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="quiet-link" href="index.html">Professional portfolio ↗</a></li>
         </ul>
       </nav>
     </header>
 
-    <div class="heading-tag">
-        <h2>H<span>E</span>L<span>L</span>O</h2>
-        <br>
-       <h6><a href="services.html">View Services</a></h6>
-    </div>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <figure class="hero-image" data-hero-image>
+          <img src="assets/PM-compose.jpeg" alt="Home / Cardiff, an editorial photograph by Taruz" />
+          <figcaption>HOME / CARDIFF &nbsp;—&nbsp; A STUDY IN PLACE</figcaption>
+        </figure>
+        <div class="hero-title-wrap">
+          <p class="hero-note">PHOTOGRAPHY · MOVING IMAGE · DESIGN</p>
+          <h1 id="hero-title">Find the<br /><em>frame</em><br />in everything.</h1>
+          <p class="hero-intro">Image-making for the moments that ask to be looked at twice.</p>
+        </div>
+        <a class="hero-scroll" href="#work" data-scroll-indicator>SCROLL TO WORK <span aria-hidden="true">↓</span></a>
+      </section>
 
-
-    <div class="section__container about__container" id="about">
-        <img src="assets/logo-dark.svg" alt="logo" />
-      <h2 class="section__header"><u>WE CAPTURE THE MOMENTS</u></h2>
-      <p class="section__description">
-        At Taruz, we specialize in freezing those fleeting moments in time
-        that hold immense significance for you. With our passion for photography
-        and keen eye for detail, we transform ordinary moments into
-        extraordinary memories.
-      </p>
-      <p class="section__description">
-        Whether it's a milestone event, a candid portrait, or the breathtaking
-        beauty of nature, we strive to encapsulate the essence of every moment,
-        ensuring that your cherished memories last a lifetime. Trust us to
-        capture the magic of your life's journey, one frame at a time.
-      </p>
-    </div>
-
-    <div class="section__container portfolio__container">
-      <h2 class="section__header"><u> ~ PICTURES ~ </u></h2>
-      <div class="portfolio__grid">
-        <div class="portfolio__card">
-          <img src="assets/portfolio-1.svg" alt="portfolio" />
-          <div class="portfolio__content">
-            <a href="gallery.html"><button class="btn">VIEW PICTURES</button></a>
-          </div>
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="work-heading" data-reveal>
+          <p class="side-note">SELECTED<br />WORK</p>
+          <h2 id="work-title">Stories,<br /><em>held</em> in view.</h2>
         </div>
-        <div class="portfolio__card">
-          <img src="assets/portfolio-2.svg" alt="portfolio" />
-          <div class="portfolio__content">
-            <a href="gallery.html"><button class="btn">VIEW PICTURES</button></a>
-          </div>
-        </div>
-        <div class="portfolio__card">
-          <img src="assets/portfolio-3.svg" alt="portfolio" />
-          <div class="portfolio__content">
-          <a href="gallery.html"><button class="btn">VIEW PICTURES</button></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="price-tag">
-        <h6><a href="#about">View Prices</a></h6>
-      </div>
-    <section class="service" id="service">
-      <div class="section__container service__container">
-        <h2 class="section__header"><u>~ SERVICES ~</u></h2>
-        <p class="section__description">
-            WE OFFER A WIDE RANGE OF SERVICES AT REASONABLE PRICES. 
-            WE MAKE SURE THAT YOU ARE CATERED FOR AND WE PRIDE IN OUR QUALITY OF 
-            EXCEPTIONAL WORK
-        </p>
-        <br>
-        <br>
-        <h3 class="section__header"><u>~ PHOTOGRAPHY ~</u></h3>
-        <div class="service__grid">
-          <div class="service__card">
-            <h4>Portrait Sessions</h4>
-            <p>
-              Our portrait sessions are designed to showcase your personality
-              and style in stunning imagery.
-            </p>
-          </div>
-          <div class="service__card">
-            <h4>Wedding Sessions</h4>
-            <p>
-              Embrace the beauty and miracle of new ventures with your significant
-              other.
-            </p>
-          </div>
-          <div class="service__card">
-            <h4>Events Sessions</h4>
-            <p>
-              Cherish the bond of family and friends with our custom-designed playful candid
-              moments and portrait sessions.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="section__container service__container">
-        <h2 class="section__header"><u>~ VIDEOGRAPHY ~</u></h2>
-        <div class="service__grid">
-          <div class="service__card">
-            <h4>Clipping</h4>
-            <p>
-              Stunning short clips that are used to entice your audience.
-            </p>
-          </div>
-          <div class="service__card">
-            <h4>Longing</h4>
-            <p>
-              Desire the service of experiencing long videos with captions and 
-              visual appeal.
-            </p>
-          </div>
-          
-        </div>
-      </div>
-      <div class="section__container service__container">
-        <h2 class="section__header"><u>~ DESIGN ~</u></h2>
-        <div class="service__grid">
-          <div class="service__card">
-            <h4>Website</h4>
-            <p>
-              Create a brand portfolio for work, advertisment and everything in-between
-              with stunning websites 
-            </p>
-          </div>
-          <div class="service__card">
-            <h4>Figma UI/UX Design</h4>
-            <p>
-              Showcase your website before your website with visual appearance and prototyping
-            </p>
-          </div>
-          <div class="service__card">
-            <h4>Graphic Design</h4>
-            <p>
-              Logos and birthday flyers including menus and anything to do with design, 
-              we got you covered.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-
-    <section class="section__container gallery__container">
-      <h2 class="section__header"><u>~ GALLERY ~</u></h2>
-      <div class="gallery__grid">
-        <img src="assets/image-1.svg" alt="gallery" />
-        <img src="assets/image-2.svg" alt="gallery" />
-        <img src="assets/image-3.svg" alt="gallery" />
-        <img src="assets/image-4.svg" alt="gallery" />
-        <img src="assets/image-5.svg" alt="gallery" />
-        <img src="assets/image-6.svg" alt="gallery" />
-        <img src="assets/image-7.svg" alt="gallery" />
-        <img src="assets/image-8.svg" alt="gallery" />
-      </div>
-      <div class="gallery__btn">
-        <a href="gallery.html"><button class="btn">VIEW GALLERY</button></a>
-      </div>
-    </section>
-
-    <section class="section__container instagram__container">
-        <h2 class="section__header"><u>~ CAROUSEL ~</u></h2>
-        <div class="instagram__flex">
-          <img src="assets/image-1.svg" alt="instagram" />
-          <img src="assets/image-2.svg" alt="instagram" />
-          <img src="assets/image-3.svg" alt="instagram" />
-          <img src="assets/image-4.svg" alt="instagram" />
-          <img src="assets/image-5.svg" alt="instagram" />
-          <img src="assets/image-6.svg" alt="instagram" />
-          <img src="assets/image-7.svg" alt="instagram" />
-          <img src="assets/image-8.svg" alt="instagram" />
+        <div class="work-list">
+          <a class="work-piece photo-piece" href="gallery.html" data-reveal>
+            <img src="assets/header.jpg" alt="Black-and-white photography by Taruz" data-scroll-image />
+            <div class="piece-copy"><p>PHOTOGRAPHY</p><h3>Open archive <span aria-hidden="true">↗</span></h3></div>
+          </a>
+          <a class="work-piece film-piece" href="video.html" data-reveal>
+            <img src="assets/header-2.jpg" alt="Black-and-white moving-image still" data-scroll-image />
+            <div class="piece-copy"><p>VIDEOGRAPHY</p><h3>In motion</h3><small>SELECTED FILMS IN PROGRESS</small></div>
+          </a>
+          <a class="work-piece design-piece" href="design.html" data-reveal>
+            <div class="type-composition" aria-hidden="true" data-drift><span>TYPE</span><span>FORM</span><span>COLOUR</span></div>
+            <div class="piece-copy"><p>GRAPHIC DESIGN</p><h3>In print<br />and pixels</h3><small>SELECTED WORK IN PROGRESS</small></div>
+          </a>
         </div>
       </section>
 
-    <footer id="contact">
-      <div class="section__container footer__container">
-        <div class="footer__col">
-          <img src="assets/logo-dark.svg" alt="logo" />
-          <div class="footer__socials">
-            <a href="#"><i class="ri-facebook-fill"></i></a>
-            <a href="#"><i class="ri-instagram-line"></i></a>
-            <a href="#"><i class="ri-twitter-fill"></i></a>
-            <a href="#"><i class="ri-youtube-fill"></i></a>
-            <a href="#"><i class="ri-pinterest-line"></i></a>
-          </div>
+      <section class="practice" id="practice" aria-labelledby="practice-title">
+        <p class="vertical-note">CREATIVE PRACTICE / TARUZ</p>
+        <div class="practice-text" data-reveal>
+          <p class="kicker">A LITTLE ABOUT THE WORK</p>
+          <h2 id="practice-title" data-drift>I’m interested in the feeling before the explanation.</h2>
+          <p class="practice-copy">My work moves between photography, video and graphic design. I’m drawn to light, gesture, texture and composition — the small decisions that let an image carry a story. Each project begins with paying attention, then finding the clearest way to make that attention visible.</p>
         </div>
-        <div class="footer__col">
-          <ul class="footer__links">
-            <li><a href="home.html">HOME</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="services.html">SERVICES</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="#blog">PRICES</a></li>
-            <li><a href="contact.html">CONTACT US</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-            <ul class="footer__links">
-              <p><b><u>DO NOT HESITATE TO REACH OUT</u></b></p>
-              <p>Call: +44 7512 501931</p> 
-              <p>Email at: <a href="andrewtaruz50@gmail.com"><u>Andrew's Email</u></a></p>
-            </ul>
-          </div>
-      </div>
-      <div class="footer__bar">
-        Copyright © 2024 Taruz . All rights reserved.
-      </div>
-    </footer>
+        <img class="practice-image" src="assets/portfolio-1.jpg" alt="Photography detail by Taruz" data-reveal />
+      </section>
 
+      <section class="contact" id="contact" aria-labelledby="contact-title" data-reveal>
+        <p class="contact-label">AVAILABLE FOR SELECTED CREATIVE WORK</p>
+        <h2 id="contact-title">Say hello.</h2>
+        <div class="contact-links">
+          <a href="mailto:andrewtaruz50@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/tatendataruvinga/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/taruz50" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a href="index.html">← PROFESSIONAL PORTFOLIO</a><p>© 2026 TARUZ</p></footer>
+    <div class="script-hook instagram__flex" aria-hidden="true"></div>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
+    <script src="creative-home.js"></script>
   </body>
 </html>

@@ -64,6 +64,29 @@
         </div>
       </section>
 
+      <section class="story-comparison" id="story" aria-labelledby="story-title">
+        <div class="story-comparison__heading" data-reveal>
+          <p class="side-note">PROCESS<br />IN FRAME</p>
+          <div>
+            <h2 id="story-title">Story in view.</h2>
+            <p>From capture to composition.</p>
+          </div>
+        </div>
+        <div class="comparison" data-comparison style="--comparison-position:50%;">
+          <div class="comparison__image comparison__image--edited">
+            <img src="assets/process/cardiff-edit.jpg" alt="Edited final photograph of Cardiff" />
+          </div>
+          <div class="comparison__image comparison__image--raw" data-comparison-raw>
+            <img src="assets/process/cardiff-raw.jpg" alt="Raw original photograph of Cardiff" />
+          </div>
+          <p class="comparison__label comparison__label--raw" aria-hidden="true">RAW</p>
+          <p class="comparison__label comparison__label--edited" aria-hidden="true">EDITED</p>
+          <div class="comparison__divider" aria-hidden="true"><span>↔</span></div>
+          <p class="comparison__instruction" aria-hidden="true"><span class="comparison__instruction--desktop">DRAG TO REVEAL THE EDIT</span><span class="comparison__instruction--mobile">SWIPE TO REVEAL</span></p>
+          <input class="comparison__range" data-comparison-range type="range" min="0" max="100" value="50" step="1" aria-label="Image comparison: use left and right arrow keys to reveal the raw or edited Cardiff photograph" />
+        </div>
+      </section>
+
       <section class="practice" id="practice" aria-labelledby="practice-title">
         <p class="vertical-note">CREATIVE PRACTICE / TARUZ</p>
         <div class="practice-text" data-reveal>

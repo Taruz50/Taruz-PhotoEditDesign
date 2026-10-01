@@ -1,1 +1,15 @@
 .DS_Store
+
+# Local portfolio source / backup files
+index-old.html
+assets/Taruz-header.svg
+assets/Taruz-signature.svg
+
+# Original video source files
+assets/video/*.mov
+
+# Intermediate video exports
+assets/video/experimental.mp4
+assets/video/featured-film.mp4
+assets/video/interior.mp4
+assets/video/perspective.mp4

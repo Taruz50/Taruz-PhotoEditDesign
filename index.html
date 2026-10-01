@@ -11,9 +11,17 @@
   />
 
   <link rel="stylesheet" href="style.css" />
+  <script>
+    try {
+      if (!sessionStorage.getItem("taruz-professional-intro") && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("portfolio-splash-pending");
+      }
+    } catch (error) {}
+  </script>
 </head>
 
 <body>
+  <div class="portfolio-splash" aria-hidden="true"><span class="portfolio-splash__line"></span><span class="portfolio-splash__name">TARUZ</span><span class="portfolio-splash__line"></span></div>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <a href="#top" class="brand">TARUZ</a>
@@ -21,7 +29,7 @@
     <nav class="site-nav" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#work">Work</a>
-      <a href="#creative">Creative</a>
+      <a href="home.html">Creative Portfolio <span aria-hidden="true">↗</span></a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -43,6 +51,7 @@
               and create visual work. A technical mind. A different way of seeing.</p>
             <div class="hero-links">
               <a class="primary-link" href="#work">Explore selected work <span aria-hidden="true">↗</span></a>
+              <a href="home.html">EXPLORE CREATIVE WORK <span aria-hidden="true">↗</span></a>
               <a href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
             </div>
           </div>
@@ -82,7 +91,7 @@
           <article class="project-card featured-project">
             <p class="project-type">01 / WEB / SOFTWARE/ ARCHIVE</p>
             <span class="project-status">CURRENT FOCUS</span>
-            <h3>Dad's Sermon Library</h3>
+            <h3>Sermon Library</h3>
             <p>
               A purpose-built digital sermon archive for preserving,
               organising and streaming a growing library of messages.
@@ -131,10 +140,10 @@
           </a>
 
           <div class="creative-details">
-            <p class="creative-meta">CREATIVE / EDITORIAL / PHOTOGRAPHY</p>
+            <p class="creative-meta">PHOTOGRAPHY / GRAPHIC DESIGN / MOVING IMAGE</p>
             <h2>Home / Cardiff</h2>
             <p class="creative-description">A quiet photographic study of home, place and everyday detail in Cardiff.</p>
-            <a href="home.html" class="text-link">Enter creative portfolio <span aria-hidden="true">↗</span></a>
+            <a href="home.html" class="text-link">CREATIVE PORTFOLIO <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </div>
@@ -170,7 +179,7 @@
         </p>
 
         <div class="contact-links">
-          <span class="contact-placeholder">Email details coming soon</span>
+          <a href="mailto:andrewtaruz50@gmail.com">andrewtaruz50@gmail.com</a>
           <a href="https://www.linkedin.com/in/tatendataruvinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/taruz50" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="tatenda-cv.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
@@ -180,10 +189,19 @@
 
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 Taruz</p>
-    <p>Built by hand.</p>
-  </footer>
+  <footer class="site-footer"><a href="home.html">← CREATIVE PORTFOLIO</a><p>© 2026 TARUZ</p></footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      if (!root.classList.contains("portfolio-splash-pending")) return;
+      window.setTimeout(() => {
+        root.classList.add("portfolio-splash-complete");
+        try { sessionStorage.setItem("taruz-professional-intro", "shown"); } catch (error) {}
+        window.setTimeout(() => root.classList.remove("portfolio-splash-pending"), 250);
+      }, 900);
+    })();
+  </script>
 
 </body>
 </html>

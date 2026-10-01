@@ -23,6 +23,14 @@ body {
   line-height: 1.6;
 }
 
+.portfolio-splash { display:none; }
+.portfolio-splash-pending .portfolio-splash { position:fixed; z-index:1000; inset:0; display:flex; align-items:center; justify-content:center; gap:1rem; background:var(--bg); color:var(--text); font:700 clamp(1.15rem,3vw,2rem)/1 "Courier New", Courier, monospace; letter-spacing:.22em; transition:opacity .25s ease,visibility .25s ease; }
+.portfolio-splash__line { width:clamp(2.5rem,8vw,7rem); height:1px; background:var(--accent); transform:scaleX(0); animation:portfolio-splash-line .55s cubic-bezier(.2,.7,.2,1) forwards; }
+.portfolio-splash__name { opacity:0; animation:portfolio-splash-name .45s ease .18s forwards; }
+.portfolio-splash-complete .portfolio-splash { opacity:0; visibility:hidden; }
+@keyframes portfolio-splash-line { to { transform:scaleX(1); } }
+@keyframes portfolio-splash-name { to { opacity:1; } }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -305,7 +313,6 @@ section[id], #top, #main-content { scroll-margin-top: 100px; }
 .project-card p:not(.project-type) { font-size: .9rem; }
 .project-card a { color: var(--text); }
 .project-card-link { margin-top: auto; padding-top: 2rem; color: var(--muted); font-family: "Courier New", Courier, monospace; font-size: 0.8rem; }
-.contact-placeholder { color: var(--muted); }
 .text-link { padding-bottom: .6rem; border-bottom: 1px solid var(--accent); color: var(--text); }
 .creative-feature { display: grid; grid-template-columns: minmax(220px, 42%) minmax(0, 1fr); align-items: end; gap: clamp(1.5rem, 5vw, 5rem); max-width: 980px; margin-top: 2.75rem; padding-top: 1rem; border-top: 1px solid var(--line); }
 .creative-image { display: block; overflow: hidden; aspect-ratio: 4 / 5; background: var(--panel); border: 1px solid var(--line); }
@@ -348,4 +355,4 @@ section[id], #top, #main-content { scroll-margin-top: 100px; }
   .creative-image { width: min(100%, 330px); aspect-ratio: 4 / 5; }
   .creative-meta { margin-bottom: .85rem; font-size: .6rem; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } .project-card:hover, .project-card:focus-within { transform: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } .project-card:hover, .project-card:focus-within { transform: none; } .portfolio-splash { display:none !important; } }

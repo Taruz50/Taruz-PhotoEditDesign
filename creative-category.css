@@ -127,14 +127,11 @@ body.creative-gallery > nav .nav__logo img.creative-logo { display:block; width:
 .creative-page-links a { color:inherit; text-decoration:none; opacity:.8; transition:opacity .25s ease,color .25s ease; }
 .creative-page-links a:hover { color:var(--paper); opacity:1; }
 
-/* Gallery archive density: curated initial view with progressive disclosure. */
+/* Gallery archive density. */
 body.creative-gallery .gallery-container { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(1rem,2vw,2rem); width:min(1400px,84vw); margin:0 auto; padding:0 0 clamp(3rem,7vw,7rem); box-shadow:none; }
 body.creative-gallery .gallery-item { display:block; min-width:0; margin:0; opacity:1; }
+body.creative-gallery .gallery-item[hidden] { display:none; }
 body.creative-gallery .gallery-item img { display:block; width:100%; height:auto; margin:0; border-radius:0; }
-body.creative-gallery .gallery-more-wrap { display:flex; justify-content:center; padding:0 8vw clamp(5rem,8vw,8rem); background:var(--paper); }
-body.creative-gallery .gallery-more { padding:.7rem 0; border:0; border-bottom:1px solid var(--wine); background:transparent; color:var(--ink); font:500 .6rem/1.4 var(--mono); letter-spacing:.09em; text-transform:uppercase; cursor:pointer; }
-body.creative-gallery .gallery-more span { margin-left:.45rem; color:var(--wine); }
-body.creative-gallery .gallery-more[hidden] { display:none; }
 @media (max-width:800px) { .creative-page-nav { display:block; min-height:0; } .creative-page-bar { justify-content:space-between; min-height:70px; } .creative-page-brand,.creative-page-brand img { width:78px; } .creative-page-menu { display:block; } .creative-page-links { display:none; align-items:flex-start; flex-direction:column; gap:1.15rem; padding:0 0 1.4rem; } .creative-page-links.open { display:flex; } body.creative-gallery .gallery-container { grid-template-columns:repeat(2,minmax(0,1fr)); width:min(100% - 14vw,760px); gap:1rem; } }
 @media (max-width:520px) { body.creative-gallery .gallery-container { grid-template-columns:1fr; width:86vw; gap:1.25rem; } }
 

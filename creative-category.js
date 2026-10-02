@@ -34,30 +34,23 @@
 
   const archive = document.querySelector(".creative-gallery .gallery-container");
   const controls = [...document.querySelectorAll("[data-gallery-controls] button")];
-  const more = document.querySelector("[data-gallery-more]");
-  if (archive && controls.length && more) {
+  if (archive && controls.length) {
     const items = [...archive.querySelectorAll(".gallery-item")];
-    const initialCount = 9;
     let activeFilter = "all";
-    let expanded = false;
 
     const updateArchive = () => {
-      items.forEach((item, index) => {
+      items.forEach((item) => {
         const category = item.querySelector("img")?.dataset.img;
         const matches = activeFilter === "all" || category === activeFilter;
-        const visible = matches && (activeFilter !== "all" || expanded || index < initialCount);
-        item.hidden = !visible;
+        item.hidden = !matches;
       });
-      more.hidden = activeFilter !== "all" || expanded || items.length <= initialCount;
       controls.forEach((button) => button.classList.toggle("btn-clicked", button.dataset.btn === activeFilter));
     };
 
     controls.forEach((button) => button.addEventListener("click", () => {
       activeFilter = button.dataset.btn || "all";
-      expanded = false;
       updateArchive();
     }));
-    more.addEventListener("click", () => { expanded = true; updateArchive(); });
     updateArchive();
   }
 
